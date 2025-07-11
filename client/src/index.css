@@ -1,1 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Carattere&display=swap');
 @import "tailwindcss";
+
+
+@theme {
+    --font-Poppins: 'Poppins', 'sans-serif';
+    --font-carattere: 'Carattere', 'sans-serif';
+    --text-to-small: 0.6rem;
+    --color-matcha: rgb(116, 161, 46);
+}
+
+@layer base {
+    body {
+        font-family: var(--font-Poppins)
+    }
+
+}
+
+@layer components {
+    .roundedIcon {
+        @apply flex flex-col justify-center items-center h-7.5 w-7.5 bg-white rounded-full cursor-pointer;
+    }
+    .roundedCount {
+        @apply flex flex-col justify-center items-center absolute -top-0.5 -right-1 w-3.5 h-3.5 rounded-full text-[0.5rem];
+    }
+    .slideThumbnail {
+        @apply w-[34rem] h-[34rem] scale-0 opacity-0 transition-all duration-1000 ease-in-out cursor-pointer ;
+    }
+
+}
