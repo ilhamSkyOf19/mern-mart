@@ -17,7 +17,7 @@ const SectionThumbnail: FC = () => {
     const handleSelected = (index: number): void => setSelected(index)
 
     // selected
-    const imgSelected: string[] = ['bread', 'meet', 'vegetables']
+    const imgSelected: string[] = ['meet', 'bread', 'vegetables']
 
     return (
         <div className='h-[100vh] w-full flex flex-row justify-start items-start'>
@@ -28,8 +28,8 @@ const SectionThumbnail: FC = () => {
                     <div className='flex flex-col justify-start items-start mb-4'>
                         <h2 className='font-bold text-5xl capitalize text-slate-800'>
                             {
-                                selected === 0 && 'fresh bread' ||
-                                selected === 1 && 'fresh meet' ||
+                                selected === 0 && 'fresh meet' ||
+                                selected === 1 && 'fresh bread' ||
                                 selected === 2 && 'fresh veges'
                             }
                         </h2>
@@ -98,8 +98,8 @@ const ButtonSlideThumbnail: FC<ButtonSlideThumbnailProps> = ({ selected, handleS
                     return (
                         <button key={index} className={`w-[3.5rem] h-[3.5rem] bg-white rounded-full flex flex-col justify-center items-center cursor-pointer ${selected !== index && 'scale-80 opacity-65'} transition-all duration-400 ease-in-out`} onClick={() => handleSelected(index)}>
                             {
-                                item === 'bread' && <img src={thumbnailSandwich} className='w-[80%] h-[80%] object-cover' />
-                                || item === 'meet' && <img src={meet} className='w-[80%] h-[80%] object-cover' />
+                                item === 'meet' && <img src={meet} className='w-[80%] h-[80%] object-cover' />
+                                || item === 'bread' && <img src={thumbnailSandwich} className='w-[80%] h-[80%] object-cover' />
                                 || item === 'vegetables' && <img src={vegetables} className='w-[80%] h-[80%] object-cover' />
                             }
 
@@ -120,12 +120,12 @@ const SlideThumbnail: FC<SlideThumbnailProps> = ({ selected }) => {
     return (
         <>
             {
-                <div className='absolute top-0 -left-52 h-[100vh] flex flex-col justify-center items-center overflow-hidden pt-20'>
-                    <div className={`slideThumbnail hover:scale-105 ${selected === 0 ? 'translate-y-full scale-100 opacity-100' : ''} `}>
-                        <img src={thumbnailSandwich} alt="thumbnail" className='w-full h-full object-contain' />
-                    </div>
-                    <div className={` w-[34rem] h-[34rem] transition-all duration-1000 ease-in-out ${selected === 2 && 'scale-0 opacity-0 -translate-y-full'} ${selected === 0 && 'translate-y-full opacity-0 scale-0'}`}>
+                <div className='absolute top-0 -left-52 h-[110vh] flex flex-col justify-center items-center overflow-hidden '>
+                    <div className={`slideThumbnail hover:scale-105 ${selected === 0 && 'translate-y-full scale-100 opacity-100'} `}>
                         <img src={meet} alt="thumbnail" className='w-full h-full object-contain' />
+                    </div>
+                    <div className={`w-[34rem] h-[34rem] transition-all duration-1000 ease-in-out ${selected === 2 && '-scale-50 opacity-0 -translate-y-full'} ${selected === 0 && 'translate-y-full opacity-0 -scale-50'}`}>
+                        <img src={thumbnailSandwich} alt="thumbnail" className='w-full h-full object-contain' />
                     </div>
                     <div className={`slideThumbnail hover:scale-105 ${selected === 2 && '-translate-y-full opacity-100 scale-100'}`}>
                         <img src={vegetables} alt="thumbnail" className='w-full h-full object-contain' />

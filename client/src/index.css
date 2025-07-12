@@ -25,7 +25,10 @@
         @apply flex flex-col justify-center items-center absolute -top-0.5 -right-1 w-3.5 h-3.5 rounded-full text-[0.5rem];
     }
     .slideThumbnail {
-        @apply w-[34rem] h-[34rem] scale-0 opacity-0 transition-all duration-1000 ease-in-out cursor-pointer ;
+        @apply w-[34rem] h-[34rem] -scale-50 opacity-0 transition-all duration-1000 ease-in-out cursor-pointer ;
+    }
+    .img-cover {
+        @apply w-full h-full object-cover
     }
 
 }
