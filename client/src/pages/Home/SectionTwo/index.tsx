@@ -21,7 +21,7 @@ import wine from '../../../assets/category/wine.jpg'
 
 const SectionTwo: FC = () => {
     return (
-        <div className="min-h-[100vh] w-full flex flex-col justify-start items-start pt-28 gap-12 pb-12">
+        <div className="min-h-[100vh] w-full flex flex-col justify-start items-start pt-28 gap-12 pb-20">
             {/* feedback */}
             <div className="w-full flex flex-row justify-center items-center px-32 gap-4">
                 {/* card */}
@@ -41,32 +41,32 @@ const SectionTwo: FC = () => {
             {/* category */}
             <div className='w-full h-[90vh] grid grid-cols-3 grid-rows-1 px-12 gap-4'>
                 <div className='col-span-1 row-span-1 bg-matcha overflow-hidden rounded-md relative cursor-pointer group'>
-                    <img src={veges} alt="category" className='img-cover group-hover:scale-105 duration-500 ease-in-out' />
+                    <img src={veges} alt="vegetable" className='img-cover group-hover:scale-105 duration-500 ease-in-out' />
                     <CardInCategory text1='Fresh' text2='& Veges' >
                         <LuCarrot className='text-2xl text-matcha' />
                     </CardInCategory>
                 </div>
                 <div className='col-span-2 row-span-1 grid grid-cols-3 grid-rows-2 gap-4 rounded-md'>
                     <div className='col-span-2 row-span-1 rounded-md overflow-hidden cursor-pointer group relative'>
-                        <img src={cereal} alt="category" className='img-cover group-hover:scale-105 duration-500 ease-in-out' />
+                        <img src={cereal} alt="cerela" className='img-cover group-hover:scale-105 duration-500 ease-in-out' />
                         <CardInCategory text1='Breakfast' text2='& Cereal' >
                             <MdOutlineFreeBreakfast className='text-2xl text-matcha' />
                         </CardInCategory>
                     </div>
                     <div className='col-span-1 row-span-1 rounded-md overflow-hidden cursor-pointer group relative'>
-                        <img src={bread} alt="category" className='img-cover group-hover:scale-105 duration-500 ease-in-out' />
+                        <img src={bread} alt="bread" className='img-cover group-hover:scale-105 duration-500 ease-in-out' />
                         <CardInCategory text1='Bread' text2='& Pastries' >
                             <PiBreadBold className='text-2xl text-matcha' />
                         </CardInCategory>
                     </div>
                     <div className='col-span-1 row-span-2 rounded-md overflow-hidden cursor-pointer group relative'>
-                        <img src={wine} alt="category" className='img-cover group-hover:scale-105 duration-500 ease-in-out' />
+                        <img src={wine} alt="wine" className='img-cover group-hover:scale-105 duration-500 ease-in-out' />
                         <CardInCategory text1='Bear, Wine' text2='& Spirits' >
                             <GiWineBottle className='text-2xl text-matcha' />
                         </CardInCategory>
                     </div>
                     <div className='col-span-2 row-span-2 rounded-md overflow-hidden cursor-pointer group relative'>
-                        <img src={nuts} alt="category" className='img-cover group-hover:scale-105 duration-500 ease-in-out' />
+                        <img src={nuts} alt="nuts" className='img-cover group-hover:scale-105 duration-500 ease-in-out' />
                         <CardInCategory text1='Seeds' text2='& Nuts' >
                             <TbSeeding className='text-2xl text-matcha' />
                         </CardInCategory>

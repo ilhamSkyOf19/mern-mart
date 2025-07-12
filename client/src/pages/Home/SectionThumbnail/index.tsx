@@ -50,7 +50,7 @@ const SectionThumbnail: FC = () => {
                 </div>
                 {/* vector */}
                 <div className='flex flex-col justify-center items-center w-[13rem] h-[13rem] absolute right-0 bottom-0'>
-                    <img src={vector} className='w-full h-full object-cover' />
+                    <img src={vector} alt='vector' className='w-full h-full object-cover' />
                 </div>
                 <KetcupComponent />
             </div>
@@ -76,7 +76,7 @@ const KetcupComponent: FC = () => {
             <div className='absolute top-[15.8rem] -left-10 w-[4rem] h-[4rem] rounded-full shadow-[0_0_6rem_2rem_rgba(0,0,0,1)]'></div>
             {/* ketcup */}
             <div className='absolute top-[13rem] -left-20 w-[10rem] h-[10rem]'>
-                <img src={ketcup} className='w-full h-full object-cover' />
+                <img src={ketcup} alt='ketcup' className='w-full h-full object-cover' />
             </div>
         </>
     )
@@ -98,9 +98,9 @@ const ButtonSlideThumbnail: FC<ButtonSlideThumbnailProps> = ({ selected, handleS
                     return (
                         <button key={index} className={`w-[3.5rem] h-[3.5rem] bg-white rounded-full flex flex-col justify-center items-center cursor-pointer ${selected !== index && 'scale-80 opacity-65'} transition-all duration-400 ease-in-out`} onClick={() => handleSelected(index)}>
                             {
-                                item === 'meet' && <img src={meet} className='w-[80%] h-[80%] object-cover' />
-                                || item === 'bread' && <img src={thumbnailSandwich} className='w-[80%] h-[80%] object-cover' />
-                                || item === 'vegetables' && <img src={vegetables} className='w-[80%] h-[80%] object-cover' />
+                                item === 'meet' && <img src={meet} alt='met' className='w-[80%] h-[80%] object-cover' />
+                                || item === 'bread' && <img src={thumbnailSandwich} alt='sandwich' className='w-[80%] h-[80%] object-cover' />
+                                || item === 'vegetables' && <img src={vegetables} alt='vegetable' className='w-[80%] h-[80%] object-cover' />
                             }
 
                         </button>

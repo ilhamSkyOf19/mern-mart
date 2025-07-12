@@ -2,6 +2,7 @@ import type { FC } from "react"
 import Navbar from "../../fragments/Navbar"
 import SectionThumbnail from "./SectionThumbnail"
 import SectionTwo from "./SectionTwo"
+import SectionInfo from "./SectionInfo"
 
 const Home: FC = () => {
   return (
@@ -9,6 +10,7 @@ const Home: FC = () => {
       <Navbar />
       <SectionThumbnail />
       <SectionTwo />
+      <SectionInfo />
     </div>
   )
 }
