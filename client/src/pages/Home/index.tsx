@@ -3,6 +3,8 @@ import Navbar from "../../fragments/Navbar"
 import SectionThumbnail from "./SectionThumbnail"
 import SectionTwo from "./SectionTwo"
 import SectionInfo from "./SectionInfo"
+import SectionClientSays from "./SectionClientSays"
+
 
 const Home: FC = () => {
   return (
@@ -11,6 +13,7 @@ const Home: FC = () => {
       <SectionThumbnail />
       <SectionTwo />
       <SectionInfo />
+      <SectionClientSays />
     </div>
   )
 }

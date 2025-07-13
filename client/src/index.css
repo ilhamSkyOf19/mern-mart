@@ -3,6 +3,7 @@
 @import "tailwindcss";
 
 
+
 @theme {
     --font-Poppins: 'Poppins', 'sans-serif';
     --font-carattere: 'Carattere', 'sans-serif';
@@ -30,5 +31,26 @@
     .img-cover {
         @apply w-full h-full object-cover
     }
+    /* col */
+    .flex-col-start-start {
+        @apply flex flex-col justify-start items-start
+    }
+    .flex-col-center-center {
+        @apply flex flex-col justify-center items-center
+    }
+    .flex-col-start-center {
+        @apply flex flex-col justify-start items-center
+    }
+    /* row */
+    .flex-row-start-start {
+        @apply flex flex-row justify-start items-start
+    }
+     .flex-row-center-center {
+        @apply flex flex-row justify-center items-center
+    }
+    .flex-row-start-center {
+        @apply flex flex-row justify-start items-center
+    }
+
 
 }
