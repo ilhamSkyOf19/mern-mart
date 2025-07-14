@@ -52,5 +52,32 @@
         @apply flex flex-row justify-start items-center
     }
 
+    /* animation underline */
+    .animation-underline {
+        @apply after:w-full after:h-[2px] after:bg-matcha after:absolute after:bottom-0 after:left-0 after:scale-x-0 after:transition-all after:duration-300 after:ease-in-out after:origin-left cursor-pointer
+    }
+    /* animation underline */
+    .underline-no-animation {
+        @apply after:w-full after:h-[2px] after:bg-matcha after:absolute after:bottom-0 after:left-0 after:transition-all after:duration-300 after:ease-in-out after:origin-left cursor-pointer
+    }
+
 
 }
+
+/* scroll bar */
+/* Target class misalnya: .custom-scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  height: 5px;              /* kecilkan tinggi scrollbar horizontal */
+  /* width: 1px;               untuk scrollbar vertikal */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;  /* atau gunakan warna lembut */
+  
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2); /* warna thumb, misalnya matcha (#22c55e) */
+  border-radius: 9999px;     /* bulatkan ujungnya */
+}
+

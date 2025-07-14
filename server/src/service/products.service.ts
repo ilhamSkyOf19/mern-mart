@@ -12,4 +12,15 @@ export class ProductService {
             return []
         }
     }
+
+    // get category
+    static async getByCategory(category: string): Promise<ProductResponse[]> {
+        try {
+            const result = await prisma.product.findMany({ where: { category: category } });
+            return result.map(toResponseProduct);
+        } catch (error) {
+            console.log(error);
+            return []
+        }
+    }
 }

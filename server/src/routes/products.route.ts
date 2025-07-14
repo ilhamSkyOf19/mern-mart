@@ -6,5 +6,7 @@ const productsRoute = Router();
 // GET /products
 productsRoute.get("/", ProductController.getAll);
 
+// GET /products/category/:category
+productsRoute.get("/category/:category", ProductController.getByCategory);
 
 export default productsRoute;
