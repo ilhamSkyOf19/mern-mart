@@ -1,0 +1,13 @@
+{
+    "functions": {
+        "api/*.ts": {
+            "runtime": "nodejs18.x"
+        }
+    },
+    "routes": [
+        {
+            "src": "/api/(.*)",
+            "dest": "src/api/$1.ts"
+        }
+    ]
+}

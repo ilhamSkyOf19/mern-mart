@@ -1,4 +1,4 @@
-import { Product } from "../generated/prisma";
+import { Product } from "@prisma/client";
 
 export interface ProductRequest {
     title: string;
