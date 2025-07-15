@@ -19,6 +19,7 @@ import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
+import SubJudulSection from "../../../components/SubJudulSection";
 
 
 
@@ -27,9 +28,7 @@ const SectionClientSays: FC = () => {
         <div className="w-full h-[140vh] flex-col-start-center">
             {/* content  one */}
             <div className="flex-1 w-full flex-col-start-center pt-16 gap-3">
-                <h3 className="text-lg font-bold uppercase">
-                    <span className="text-matcha">client</span> says
-                </h3>
+                <SubJudulSection text1="our" text2="client says" />
                 <p className="text-xs text-slate-500 w-[40%] text-center mb-10">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque consequuntur nesciunt est eum voluptates  libero.
                 </p>

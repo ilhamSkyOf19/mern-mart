@@ -2,6 +2,7 @@ import express, { Router } from "express";
 import productsRoute from "./routes/products.route";
 import dotnev from "dotenv";
 import cors from "cors";
+import newsBlogsRoute from "./routes/news-blogs.route";
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -20,7 +21,8 @@ app.use(router);
 
 
 app.use(express.json());
-app.use("/api/products", productsRoute); // 👈 pasangkan ke prefix
+app.use("/api/products", productsRoute); // 👈 pasangkan ke prefix untuk products
+app.use("/api/news-blogs", newsBlogsRoute); // 👈 pasangkan ke prefix untuk news blogs
 
 app.listen(PORT, () => {
     console.log(`✅ Server listening on http://localhost:${PORT}`);

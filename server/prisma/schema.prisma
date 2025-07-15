@@ -23,3 +23,13 @@ model Product {
   netWeight Int
   stock     Int
 }
+
+model News {
+  id           String @id @default(auto()) @map("_id") @db.ObjectId
+  category     String
+  title        String
+  img          String
+  date         String
+  commentCount Int
+  description  String
+}

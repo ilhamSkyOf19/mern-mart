@@ -7,6 +7,9 @@ import SectionClientSays from "./SectionClientSays"
 import SectionFeatureProduct from "./SectionFeatureProduct"
 import type { ProductResponse } from "../../model/product-model"
 import { ProductService } from "../../service/products.service"
+import SectionNewsBlogs from "./SectionNewsBlogs"
+import { NewsBlogsService } from "../../service/news-blogs.service"
+import type { NewsBlogsResponse } from "../../model/news-blogs-model"
 
 
 const Home: FC = () => {
@@ -14,6 +17,9 @@ const Home: FC = () => {
   // state 
   const [data, setData] = useState<ProductResponse[] | null>([])
   const [category, setCategory] = useState<string>('organic')
+
+  // news 
+  const [dataNews, setDataNews] = useState<NewsBlogsResponse[] | null>([])
 
   // fecth data
   const fetchData = async () => {
@@ -37,6 +43,27 @@ const Home: FC = () => {
   }
 
 
+  // fetch data news
+  const fetchDataNews = async () => {
+    try {
+      const result = await NewsBlogsService.getAll();
+      setDataNews(result);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+
+  useEffect(() => {
+    fetchDataNews();
+  }, [])
+
+
+
+
+
+
+
 
 
 
@@ -49,6 +76,7 @@ const Home: FC = () => {
       <SectionFeatureProduct data={data ?? null} handleSetCategory={handleSetCategory} />
       <SectionInfo />
       <SectionClientSays />
+      <SectionNewsBlogs dataNews={dataNews ?? null} />
     </div>
   )
 }
