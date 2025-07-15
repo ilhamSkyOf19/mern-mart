@@ -12,9 +12,14 @@ import { BiShoppingBag } from "react-icons/bi";
 // type object 
 type RouteNavbar = {
     label: string,
-    route: string
+    route: string,
 }
-const Navbar: FC = () => {
+
+type Props = {
+    showNavbar: boolean
+    showBgNavbar: boolean
+}
+const Navbar: FC<Props> = ({ showNavbar, showBgNavbar }) => {
 
     // route 
     const routeNavbar: RouteNavbar[] = [
@@ -51,7 +56,7 @@ const Navbar: FC = () => {
 
 
     return (
-        <div className='absolute top-0 flex flex-row justify-between items-center w-full px-12 py-2 z-50'>
+        <div className={`fixed top-0 flex flex-row justify-between items-center w-full px-12 py-2 z-50 ${showNavbar ? `translate-y-0` : `-translate-y-full`} transition-all duration-300 ease-in-out ${showBgNavbar ? 'backdrop-blur-sm' : 'bg-transparent'}`}>
             <img src={logo} alt="logo" className='w-[7rem]' />
             <div className='flex flex-row justify-center items-center gap-7'>
                 {
