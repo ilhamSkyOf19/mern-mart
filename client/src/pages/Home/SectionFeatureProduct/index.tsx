@@ -20,6 +20,7 @@ import { BsCartPlusFill } from "react-icons/bs";
 import { BsFillCartCheckFill } from "react-icons/bs";
 import { FaRegHeart } from "react-icons/fa";
 import Nodata from "../../../components/Nodata";
+import { Parallax } from "../../../hooks/useParallax";
 
 
 
@@ -36,15 +37,29 @@ const SectionFeatureProduct: FC<SectionFeatureProductProps> = ({ data, handleSet
     // list category
     const category: string[] = ['organic', 'fruits', 'seafood', 'wine & beer', 'bakery']
 
+    console.log('window', window.scrollY);
+
+    // parallax 
+    const delayTime1000: number[] = [0, 200, 300, 400, 500, 600, 700, 800, 900, 1000]
+    const parallax1000 = delayTime1000.map(delay => Parallax.useScrollTrigger(1000, delay))
+
+    // parallax 1400
+    const delayTime1100: number[] = [100, 300, 400, 500, 600, 700, 800, 900, 1000, 1100]
+    const parallax1100 = delayTime1100.map(delay => Parallax.useScrollTrigger(1200, delay))
+
 
     return (
         <div className="w-full min-h-[100vh] flex-col-start-center pt-2 mb-12">
-            <SubJudulSection text1="featured " text2="products" />
+            <SubJudulSection text1="featured " text2="products" parallax={parallax1000[0]} />
             {/* button category */}
             <div className="flex-row-center-center gap-4 mt-7">
                 {
                     category.map((item, index) => (
-                        <button key={index} className={`text-xs uppercase font-semibold relative animation-underline hover:after:scale-x-100 pb-4.5 px-2 ${selected === index ? 'after:scale-x-100 text-matcha' : 'text-slate-900'}`} onClick={() => { setSelected(index), handleSetCategory(item) }}>{item}</button>
+                        <button key={index} className={`text-xs uppercase font-semibold  hover:after:scale-x-100  px-2`} onClick={() => { setSelected(index), handleSetCategory(item) }}>
+                            <div className={`flex flex-row justify-center items-center gap-2 pb-4.5 relative animation-underline transisi-700 ${parallax1000[index + 1] ? 'parallax-0' : 'parallax-x-right-20'} ${selected === index ? 'after:scale-x-100 text-matcha' : 'text-slate-900'}`}>
+                                {item}
+                            </div>
+                        </button>
                     ))
                 }
             </div>
@@ -58,7 +73,7 @@ const SectionFeatureProduct: FC<SectionFeatureProductProps> = ({ data, handleSet
                                 <Nodata label={'No Data Products'} />
                             ) : (
                                 data?.map((item, index) => (
-                                    <CardProduct key={index} data={item ?? null} />
+                                    <CardProduct key={index} data={item ?? null} parallax={parallax1100[index]} />
                                 ))
                             )
 
@@ -71,16 +86,17 @@ const SectionFeatureProduct: FC<SectionFeatureProductProps> = ({ data, handleSet
 
 type CardProductProps = {
     data?: ProductRequest | null
+    parallax?: boolean
 }
 
 // card product
-const CardProduct: FC<CardProductProps> = ({ data }) => {
+const CardProduct: FC<CardProductProps> = ({ data, parallax }) => {
     // state
     const [cart, setCart] = useState<boolean>(false)
 
 
     return (
-        <div className="w-[14rem] h-[22rem] bg-white shadow-md rounded-sm flex-col-start-start py-1 overflow-hidden shrink-0">
+        <div className={`w-[14rem] h-[22rem] bg-white shadow-md rounded-sm flex-col-start-start py-1 overflow-hidden shrink-0 transisi-700 ${parallax ? 'parallax-0' : 'parallax-x-right-20'}`}>
             {/* img */}
             <div className="flex-1/16 w-full flex-col-center-center p-1 overflow-hidden group cursor-pointer">
                 <div className="w-[80%] flex-col-center-center">

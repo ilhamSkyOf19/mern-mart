@@ -61,6 +61,44 @@
         @apply after:w-full after:h-[2px] after:bg-matcha after:absolute after:bottom-0 after:left-0 after:transition-all after:duration-300 after:ease-in-out after:origin-left cursor-pointer
     }
 
+    /* transisi */
+    .transisi-400 {
+        @apply transition-all duration-400 ease-out
+    }
+    .transisi-500 {
+        @apply transition-all duration-500 ease-out
+    }
+    .transisi-600 {
+        @apply transition-all duration-600 ease-out
+    }
+    .transisi-700 {
+        @apply transition-all duration-700 ease-out
+    }
+
+
+    /* parallax */
+    .parallax-0 {
+        @apply opacity-100 translate-0
+    }
+    .parallax-x-left-10 {
+        @apply opacity-0 -translate-x-10 
+    }
+    .parallax-x-left-20 {
+        @apply opacity-0 -translate-x-20 
+    }
+    .parallax-x-left-30 {
+        @apply opacity-0 -translate-x-30 
+    }
+    .parallax-x-right-10 {
+        @apply opacity-0 translate-x-10 
+    }
+    .parallax-x-right-20 {
+        @apply opacity-0 translate-x-20 
+    }
+    .parallax-x-right-30 {
+        @apply opacity-0 translate-x-30 
+    }
+
 
 }
 
