@@ -6,7 +6,6 @@ import { NewsBlogsService } from "../src/service/news-blogs.service";
 
 const handler = async (req: NextApiRequest, res: NextApiResponse<NewsBlogsResponse[] | { error: string }>) => {
     res.setHeader('Access-Control-Allow-Origin', 'https://fresh-mart-02.vercel.app/'); // tidak boleh '*'
-    res.setHeader('Access-Control-Allow-Credentials', 'true');
     res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS');
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 

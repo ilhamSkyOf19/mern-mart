@@ -8,7 +8,6 @@ const handler = async (
 ) => {
 
     res.setHeader('Access-Control-Allow-Origin', 'https://fresh-mart-02.vercel.app/'); // tidak boleh '*'
-    res.setHeader('Access-Control-Allow-Credentials', 'true');
     res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS');
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
