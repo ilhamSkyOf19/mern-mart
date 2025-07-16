@@ -7,7 +7,7 @@ const handler = async (
     res: NextApiResponse<ProductResponse[] | { error: string }>
 ) => {
 
-    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:5173'); // tidak boleh '*'
+    res.setHeader('Access-Control-Allow-Origin', 'https://fresh-mart-02.vercel.app/'); // tidak boleh '*'
     res.setHeader('Access-Control-Allow-Credentials', 'true');
     res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS');
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
