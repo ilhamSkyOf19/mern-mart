@@ -22,7 +22,7 @@ app.use(router);
 
 app.use(express.json());
 app.use("/api/products", productsRoute); // 👈 pasangkan ke prefix untuk products
-app.use("/api/news-blogs", newsBlogsRoute); // 👈 pasangkan ke prefix untuk news blogs
+app.use("/api/news", newsBlogsRoute); // 👈 pasangkan ke prefix untuk news blogs
 
 app.listen(PORT, () => {
     console.log(`✅ Server listening on http://localhost:${PORT}`);
