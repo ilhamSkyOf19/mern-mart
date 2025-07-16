@@ -5,6 +5,10 @@ import { NewsBlogsService } from "../src/service/news-blogs.service";
 
 
 const handler = async (req: NextApiRequest, res: NextApiResponse<NewsBlogsResponse[] | { error: string }>) => {
+    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:5173'); // tidak boleh '*'
+    res.setHeader('Access-Control-Allow-Credentials', 'true');
+    res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
     if (req.method !== 'GET') {
         return res.status(405).json({ error: 'Method Not Allowed' });
