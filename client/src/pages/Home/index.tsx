@@ -100,6 +100,10 @@ const Home: FC = () => {
     fetchDataNews();
   }, [])
 
+  useEffect(() => {
+    console.log(data);
+  }, [data])
+
 
 
 

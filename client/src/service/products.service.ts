@@ -6,7 +6,7 @@ export class ProductService {
     static async getAll(): Promise<ProductResponse[]> {
         try {
             const result = await API.get("/products");
-            return result.data.data
+            return result.data;
         } catch (error) {
             console.log(error);
             return []
@@ -17,7 +17,7 @@ export class ProductService {
     static async getByCategory(category: string): Promise<ProductResponse[]> {
         try {
             const result = await API.get(`/products/category/${category}`);
-            return result.data.data;
+            return result.data;
         } catch (error) {
             console.log(error);
             return []
