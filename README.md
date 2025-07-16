@@ -50,7 +50,7 @@ Perkembangan dilakukan secara bertahap dengan fokus pada performa, desain UX, da
 ## 📩 Kontak
 
 Untuk pertanyaan, kolaborasi, atau masukan:
-📧 ilhamrohamtulloh2019bm@gmail.com
+📧 ilhamrohmatulloh2019bm@gmail.com
 
 ---
 
