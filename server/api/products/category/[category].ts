@@ -6,6 +6,13 @@ const handler = async (
     req: NextApiRequest,
     res: NextApiResponse<ProductResponse[] | { error: string }>
 ) => {
+
+    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:5173');
+    res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
+
+
     if (req.method !== 'GET') {
         return res.status(405).json({ error: 'Method Not Allowed' });
     }
