@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { ProductResponse } from '../src/models/products-model';
-import { ProductService } from '../src/service/products.service';
+import { ProductResponse } from '../../../src/models/products-model';
+import { ProductService } from '../../../src/service/products.service';
 
 const handler = async (
     req: NextApiRequest,
