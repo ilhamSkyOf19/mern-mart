@@ -35,7 +35,7 @@ Website ini menyuguhkan desain estetika dengan **efek parallax**, memperkuat cit
 - ✅ Pengelolaan data terstruktur dengan Prisma ORM  
 - ✅ Integrasi database MongoDB Atlas  
 - ✅ Sistem login & register (dalam pengembangan)  
-- ✅ Responsif dan mendukung semua perangkat
+- ✅ Responsif dan mendukung semua perangkat (dalam pengembangan)
 
 ---
 
