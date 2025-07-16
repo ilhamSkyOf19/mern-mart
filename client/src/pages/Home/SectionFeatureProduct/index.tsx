@@ -40,12 +40,9 @@ const SectionFeatureProduct: FC<SectionFeatureProductProps> = ({ data, handleSet
     console.log('window', window.scrollY);
 
     // parallax 
-    const delayTime1000: number[] = [0, 200, 300, 400, 500, 600, 700, 800, 900, 1000]
+    const delayTime1000: number[] = [0, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800]
     const parallax1000 = delayTime1000.map(delay => Parallax.useScrollTrigger(1000, delay))
 
-    // parallax 1400
-    const delayTime1100: number[] = [100, 300, 400, 500, 600, 700, 800, 900, 1000, 1100]
-    const parallax1100 = delayTime1100.map(delay => Parallax.useScrollTrigger(1200, delay))
 
 
     return (
@@ -73,7 +70,7 @@ const SectionFeatureProduct: FC<SectionFeatureProductProps> = ({ data, handleSet
                                 <Nodata label={'No Data Products'} />
                             ) : (
                                 data?.map((item, index) => (
-                                    <CardProduct key={index} data={item ?? null} parallax={parallax1100[index]} />
+                                    <CardProduct key={index} data={item ?? null} parallax={parallax1000[index + 7]} />
                                 ))
                             )
 
