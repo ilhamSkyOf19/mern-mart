@@ -20,29 +20,39 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import SubJudulSection from "../../../components/SubJudulSection";
+import { Parallax } from "../../../hooks/useParallax";
 
 
 
 const SectionClientSays: FC = () => {
+    // parallax 
+    const delays: number[] = [500, 600, 700, 800, 900, 1000];
+    const parallax: boolean[] = delays.map(item => Parallax.useScrollTrigger(2100, item))
+
+
+    // parallax card info 
+    const parrallaxCardInfo: boolean[] = delays.map(item => Parallax.useScrollTrigger(2550, item))
+
+
     return (
         <div className="w-full h-[140vh] flex-col-start-center">
             {/* content  one */}
             <div className="flex-1 w-full flex-col-start-center pt-16 gap-3">
-                <SubJudulSection text1="our" text2="client says" />
-                <p className="text-xs text-slate-500 w-[40%] text-center mb-10">
+                <SubJudulSection text1="our" text2="client says" parallax={parallax[0]} />
+                <p className={`text-xs text-slate-500 w-[40%] text-center mb-10 transisi-700 ${parallax[1] ? 'parallax-0' : 'parallax-y-10'}`}>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque consequuntur nesciunt est eum voluptates  libero.
                 </p>
                 {/* chef info */}
                 <div className="w-[70%] relative">
-                    <SwiperComponent />
+                    <SwiperComponent parallax={parallax} />
                 </div>
             </div>
             <div className="flex-1 w-full h-full mt-12 flex-row-center-center gap-4">
                 <div className="flex-1 flex flex-row justify-end items-center">
-                    <CardInfo img="fast-food" tittle="fast food recipes" desc="fresh, nourishing and always delicious. Check out our favorite recipes for a fruity revival" button="view recipes" />
+                    <CardInfo img="fast-food" tittle="fast food recipes" desc="fresh, nourishing and always delicious. Check out our favorite recipes for a fruity revival" button="view recipes" parallax={parrallaxCardInfo[1]} direction="left" />
                 </div>
                 <div className="flex-1 flex flex-row justify-start items-center">
-                    <CardInfo img="drink" tittle="our drink" desc="To create the perfect juice nature does all the work." button="see our range" />
+                    <CardInfo img="drink" tittle="our drink" desc="To create the perfect juice nature does all the work." button="see our range" parallax={parrallaxCardInfo[1]} direction="right" />
                 </div>
             </div>
         </div>
@@ -51,19 +61,20 @@ const SectionClientSays: FC = () => {
 
 type ChefInfoProps = {
     children: React.ReactNode
+    parallax?: boolean
 }
 
 // chef 
-const ChefInfo: FC<ChefInfoProps> = ({ children }) => {
+const ChefInfo: FC<ChefInfoProps> = ({ children, parallax }) => {
     return (
         <div className="flex-row-start-start h-[50%] px-5 w-full">
             {/* thumb */}
             {children}
             {/* info */}
             <div className="flex-1/12 flex-col-start-start pl-5">
-                <p className="text-sm text-slate-500 w-[80%] leading-5.5 mb-10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit consectetur delectus, tenetur autem aspernatur perferendis! Ratione facere quibusdam debitis distinctio veniam neque aspernatur dolores?</p>
+                <p className={`text-sm text-slate-500 w-[80%] leading-5.5 mb-10 transisi-700 ${parallax ? 'parallax-0' : 'parallax-x-right-10'}`}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit consectetur delectus, tenetur autem aspernatur perferendis! Ratione facere quibusdam debitis distinctio veniam neque aspernatur dolores?</p>
                 {/* info chef */}
-                <div className="flex-row-start-center gap-3">
+                <div className={`flex-row-start-center gap-3 transisi-700 delay-200 ${parallax ? 'parallax-0' : 'parallax-x-right-10'}`}>
                     <div className="relative">
                         <div className="w-[3rem] h-[3rem] bg-gray-400 rounded-full overflow-hidden flex-row-center-center pt-5 border-2 border-white group">
                             <div className="w-[4rem] h-[4rem] bg-gray-400 rounded-full overflow-hidden cursor-pointer group-hover:scale-105 transition-all duration-300 ease-in-out">
@@ -85,15 +96,19 @@ const ChefInfo: FC<ChefInfoProps> = ({ children }) => {
     )
 }
 
+
+type ParallaxProps = {
+    parallax: boolean[]
+}
 // swiper
-const SwiperComponent: FC = () => {
+const SwiperComponent: FC<ParallaxProps> = ({ parallax }) => {
     return (
         <>
             {/* Custom Navigation Buttons */}
-            <div className="swiper-button-prev-custom absolute top-1/3 -left-6 z-10 transform -translate-y-1/2 bg-transparent border border-slate-400 rounded-full w-8 h-8 flex items-center justify-center cursor-pointer">
+            <div className={`swiper-button-prev-custom absolute top-1/3 -left-6 z-10 transform -translate-y-1/2 bg-transparent border border-slate-400 rounded-full w-8 h-8 flex items-center justify-center cursor-pointer transisi-700 ${parallax[4] ? 'parallax-0' : 'parallax-x-left-10'}`}>
                 <FaArrowLeftLong className="text-xs" />
             </div>
-            <div className="swiper-button-next-custom absolute top-1/3 -right-6 z-10 transform -translate-y-1/2 bg-transparent border border-slate-400 rounded-full w-8 h-8 flex items-center justify-center cursor-pointer">
+            <div className={`swiper-button-next-custom absolute top-1/3 -right-6 z-10 transform -translate-y-1/2 bg-transparent border border-slate-400 rounded-full w-8 h-8 flex items-center justify-center cursor-pointer transisi-700 ${parallax[4] ? 'parallax-0' : 'parallax-x-right-10'}`}>
                 <FaArrowRightLong className="text-xs" />
             </div>
 
@@ -118,14 +133,14 @@ const SwiperComponent: FC = () => {
                 slidesPerView={1}
             >
                 <SwiperSlide>
-                    <ChefInfo>
+                    <ChefInfo parallax={parallax[2]}>
                         <div className="flex-1 h-full flex-row-center-center justify-end relative gap-4 pr-12">
-                            <div className="w-[6rem] h-[13rem] top-0 left-0 rounded-full bg-gray-300 rotate-20 overflow-hidden relative group">
+                            <div className={`w-[6rem] h-[13rem] top-0 left-0 rounded-full bg-gray-300 rotate-20 overflow-hidden relative group transisi-700 ${parallax[2] ? 'parallax-0' : 'parallax-y-top-10'}`}>
                                 <div className="w-[250%] h-[100%] bg-transparent -rotate-20 absolute -left-7 group-hover:scale-110 cursor-pointer duration-300 ease-in-out">
                                     <img src={chef} alt="chef men" className="img-cover" />
                                 </div>
                             </div>
-                            <div className="w-[6rem] h-[13rem]  top-0 left-0 rounded-full bg-gray-300 rotate-20 overflow-hidden relative group">
+                            <div className={`w-[6rem] h-[13rem]  top-0 left-0 rounded-full bg-gray-300 rotate-20 overflow-hidden relative group transisi-700 ${parallax[2] ? 'parallax-0' : 'parallax-y-10'}`}>
                                 <div className="w-[250%] h-[100%] bg-transparent -rotate-20 absolute top-9 -left-32 group-hover:scale-110 cursor-pointer duration-300 ease-in-out">
                                     <img src={chef} alt="chef men" className="img-cover" />
                                 </div>
@@ -134,14 +149,14 @@ const SwiperComponent: FC = () => {
                     </ChefInfo>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <ChefInfo>
+                    <ChefInfo parallax={parallax[2]}>
                         <div className="flex-1 h-full flex-row-center-center justify-end relative gap-4 pr-12">
-                            <div className="w-[6rem] h-[13rem] top-0 left-0 rounded-full bg-gray-300 rotate-20 overflow-hidden relative group">
+                            <div className={`w-[6rem] h-[13rem] top-0 left-0 rounded-full bg-gray-300 rotate-20 overflow-hidden relative group transisi-700 ${parallax[2] ? 'parallax-0' : 'parallax-y-top-10'}`}>
                                 <div className="w-[250%] h-[100%] bg-transparent -rotate-20 absolute -left-7 group-hover:scale-110 cursor-pointer duration-300 ease-in-out">
                                     <img src={chef} alt="chef men" className="img-cover" />
                                 </div>
                             </div>
-                            <div className="w-[6rem] h-[13rem]  top-0 left-0 rounded-full bg-gray-300 rotate-20 overflow-hidden relative group">
+                            <div className={`w-[6rem] h-[13rem]  top-0 left-0 rounded-full bg-gray-300 rotate-20 overflow-hidden relative group transisi-700 ${parallax[2] ? 'parallax-0' : 'parallax-y-10'}`}>
                                 <div className="w-[250%] h-[100%] bg-transparent -rotate-20 absolute top-9 -left-32 group-hover:scale-110 cursor-pointer duration-300 ease-in-out">
                                     <img src={chef} alt="chef men" className="img-cover" />
                                 </div>
@@ -150,14 +165,14 @@ const SwiperComponent: FC = () => {
                     </ChefInfo>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <ChefInfo>
+                    <ChefInfo parallax={parallax[2]}>
                         <div className="flex-1 h-full flex-row-center-center justify-end relative gap-4 pr-12">
-                            <div className="w-[6rem] h-[13rem] top-0 left-0 rounded-full bg-gray-300 rotate-20 overflow-hidden relative group">
+                            <div className={`w-[6rem] h-[13rem] top-0 left-0 rounded-full bg-gray-300 rotate-20 overflow-hidden relative group transisi-700 ${parallax[2] ? 'parallax-0' : 'parallax-y-top-10'}`}>
                                 <div className="w-[250%] h-[100%] bg-transparent -rotate-20 absolute -left-7 group-hover:scale-110 cursor-pointer duration-300 ease-in-out">
                                     <img src={chef} alt="chef men" className="img-cover" />
                                 </div>
                             </div>
-                            <div className="w-[6rem] h-[13rem]  top-0 left-0 rounded-full bg-gray-300 rotate-20 overflow-hidden relative group">
+                            <div className={`w-[6rem] h-[13rem]  top-0 left-0 rounded-full bg-gray-300 rotate-20 overflow-hidden relative group transisi-700 ${parallax[2] ? 'parallax-0' : 'parallax-y-10'}`}>
                                 <div className="w-[250%] h-[100%] bg-transparent -rotate-20 absolute top-9 -left-32 group-hover:scale-110 cursor-pointer duration-300 ease-in-out">
                                     <img src={chef} alt="chef men" className="img-cover" />
                                 </div>
@@ -168,7 +183,7 @@ const SwiperComponent: FC = () => {
             </Swiper>
 
             {/* Custom Pagination */}
-            <div className="swiper-pagination-custom flex justify-center mt-14"></div>
+            <div className={`swiper-pagination-custom flex justify-center mt-14 transisi-700 ${parallax[5] ? 'opacity-100' : 'opacity-0'}`}></div>
         </>
     )
 }
@@ -178,13 +193,15 @@ type CardInfoProps = {
     tittle: string,
     desc: string,
     button: string
+    parallax: boolean
+    direction: string
 }
 
 
 // card info 
-const CardInfo: FC<CardInfoProps> = ({ img, tittle, desc, button }) => {
+const CardInfo: FC<CardInfoProps> = ({ img, tittle, desc, button, parallax, direction }) => {
     return (
-        <div className="w-[70%] h-[40vh] overflow-hidden rounded-md relative group cursor-pointer">
+        <div className={`w-[70%] h-[40vh] overflow-hidden rounded-md relative group cursor-pointer transisi-700 ${parallax ? 'parallax-0' : `parallax-x-${direction}-10`}`}>
             {/* bg */}
             {
                 img === 'fast-food' && (

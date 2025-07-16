@@ -9,21 +9,25 @@ import { FaCalendarAlt } from "react-icons/fa";
 import { FaRegComments } from "react-icons/fa6";
 import type { NewsBlogsResponse } from "../../../model/news-blogs-model";
 import Nodata from "../../../components/Nodata";
+import { Parallax } from "../../../hooks/useParallax";
 
 
 type SectionNewsBlogsProps = {
     dataNews?: NewsBlogsResponse[] | null
 }
 const SectionNewsBlogs: FC<SectionNewsBlogsProps> = ({ dataNews }) => {
+    // parallax 
+    const delays: number[] = [500, 600, 700, 800, 900, 1000];
+    const parallax: boolean[] = delays.map(item => Parallax.useScrollTrigger(2850, item))
 
     return (
-        <div className='w-full min-h-[100vh] flex-col-start-center pt-7 gap-2'>
-            <SubJudulSection text1="news" text2="& blogs" />
-            <p className="text-xs w-[45%] text-center text-slate-600 mb-4">
+        <div className='w-full min-h-[100vh] flex-col-start-center pt-7 gap-2 mb-16'>
+            <SubJudulSection text1="news" text2="& blogs" parallax={parallax[0]} />
+            <p className={`text-xs w-[45%] text-center text-slate-600 mb-4 transisi-700 ${parallax[1] ? 'parallax-0' : 'parallax-y-10'}`}>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis fugiat quam, doloremque odit animi optio quia delectus corporis corrupti
             </p>
             {/* container news & blogs */}
-            <div className="w-full h-[80vh] flex-row-center-center relative before:content-[''] before:absolute before:top-0 before:w-[70%] before:h-[1px] before:bg-slate-400">
+            <div className={`w-full h-[80vh] flex-row-center-center relative before:content-[''] before:absolute before:top-0 before:w-[70%] before:h-[1px] before:bg-slate-400 transisi-700 ${parallax[3] ? 'parallax-0' : 'parallax-y-10'}`}>
                 <ScrollX>
                     {
                         dataNews?.length === 0 ? (

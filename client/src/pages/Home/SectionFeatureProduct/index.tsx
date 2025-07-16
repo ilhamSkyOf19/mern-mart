@@ -37,11 +37,14 @@ const SectionFeatureProduct: FC<SectionFeatureProductProps> = ({ data, handleSet
     // list category
     const category: string[] = ['organic', 'fruits', 'seafood', 'wine & beer', 'bakery']
 
-    console.log('window', window.scrollY);
-
     // parallax 
     const delayTime1000: number[] = [0, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800]
     const parallax1000 = delayTime1000.map(delay => Parallax.useScrollTrigger(1000, delay))
+
+
+
+
+
 
 
 
@@ -62,7 +65,7 @@ const SectionFeatureProduct: FC<SectionFeatureProductProps> = ({ data, handleSet
             </div>
 
             {/* container product */}
-            <div className="w-full h-[80vh] flex-row-center-center relative before:content-[''] before:absolute before:top-0 before:w-[70%] before:h-[1px] before:bg-slate-400">
+            <div className={`w-full h-[80vh] flex-row-center-center relative before:content-[''] before:absolute before:top-0 before:w-[70%] before:h-[1px] before:bg-slate-400 before:transition-all before:duration-700 ${parallax1000[7] ? 'before:scale-x-100' : 'before:scale-x-0'}`}>
                 <ScrollX>
                     {
                         data?.length === 0 ?

@@ -14,44 +14,53 @@ import { FaFacebookF, FaInstagram, FaLinkedin, FaTiktok, FaTwitter } from "react
 
 // icons 
 import { PiHeadsetBold } from "react-icons/pi";
+import { Parallax } from "../../../hooks/useParallax"
 
 
 const Footer: FC = () => {
+    // console.log(window.scrollY)
+
+    // parallax 
+    const delays: number[] = [300, 400, 500, 600, 1000, 1100, 1200, 1300, 1400, 1500, 1600];
+    const parallax: boolean[] = delays.map(item => Parallax.useScrollTrigger(3600, item))
     return (
         <div className='w-full py-1 bg-white flex-col-start-start relative overflow-hidden'>
             {/* vector left */}
-            <div className="absolute -top-72 -left-12 w-[40%] h-full -scale-100 opacity-20 -rotate-10 z-1">
+            <div className={`absolute -top-72 -left-12 w-[40%] h-full -scale-100 -rotate-10 z-1 transisi-700 ${parallax[0] ? 'translate-x-0 opacity-20' : 'parallax-x-left-10'}`}>
                 <img src={vectorFoods} alt="vector" className="img-cover" />
             </div>
             {/* vector right */}
-            <div className="absolute -top-72 -right-32 w-[40%] h-full  opacity-20 -rotate-10 z-1">
+            <div className={`absolute -top-72 -right-32 w-[40%] h-full -rotate-10 z-1 transisi-700 ${parallax[0] ? 'translate-x-0 opacity-20' : 'parallax-x-right-10'} `}>
                 <img src={vectorFoods} alt="vector" className="img-cover" />
             </div>
 
             {/* content one */}
-            <ContentOne />
+            <ContentOne parallax={parallax} />
 
             {/* content two */}
-            <ContentTwo />
+            <ContentTwo parallax={parallax} />
 
             {/* content three */}
-            <div className="w-full flex flex-row-center-center py-3">
+            <div className={`w-full flex flex-row-center-center py-3 transisi-700 ${parallax[8] ? 'parallax-0' : 'parallax-y-10'}`}>
                 <p className="text-xs text-slate-600">Copyright &copy; 2023. All rights reserved</p>
             </div>
         </div>
     )
 }
 
+type ParallaxProps = {
+    parallax: boolean[]
+}
 
 // conent one 
-const ContentOne: FC = () => {
+const ContentOne: FC<ParallaxProps> = ({ parallax }) => {
     return (
         <div className="flex-1 w-full min-h-[40vh] flex-col-center-center py-7 z-2">
-            <h4 className="font-bold text-lg text-slate-800 uppercase mb-3">
+            <h4 className={`font-bold text-lg text-slate-800 uppercase mb-3 transisi-700 ${parallax[0] ? 'parallax-0' : 'parallax-y-10'}`}>
                 newslatter
             </h4>
-            <p className="text-xs text-slate-600 mb-3">Subscribe to the weekly newsletter for all the latest updates</p>
-            <div className="w-[43%] flex flex-row justify-between items-center border-1 border-slate-500 rounded-full py-1 px-2 mt-3">
+            <p className={`text-xs text-slate-600 mb-3 transisi-700 ${parallax[1] ? 'parallax-0' : 'parallax-y-10'}`}>Subscribe to the weekly newsletter for all the latest updates</p>
+            <div className={`w-[43%] flex flex-row justify-between items-center border-1 border-slate-500 rounded-full py-1 px-2 mt-3 transisi-700 ${parallax[3] ? 'parallax-0' : 'parallax-y-10'}`}>
                 <input
                     type="email"
                     placeholder="Your email address"
@@ -68,7 +77,7 @@ const ContentOne: FC = () => {
 
 
 // content two
-const ContentTwo: FC = () => {
+const ContentTwo: FC<ParallaxProps> = ({ parallax }) => {
     // category 
     const category: string[] = ['company info', 'quick links', 'hot categories', 'contact us'];
 
@@ -80,14 +89,14 @@ const ContentTwo: FC = () => {
 
 
     return (
-        <div className="flex-2 w-full z-2 flex-col-start-center py-16 gap-6 relative before:content-[''] before:w-full before:h-[1.5px] before:bg-slate-200 before:absolute before:top-0 after:content-[''] after:w-full after:h-[1.5px] after:bg-slate-200 after:absolute after:bottom-0">
+        <div className={`flex-2 w-full z-2 flex-col-start-center py-16 gap-6 relative before:content-[''] before:w-full before:h-[1.5px] before:bg-slate-200 before:absolute before:top-0 after:content-[''] after:w-full after:h-[1.5px] after:bg-slate-200 after:absolute after:bottom-0 before:origin-center before:transition-all before:duration-1000 after:transition-all after:duration-1000 ${parallax[4] ? 'before:scale-100' : 'before:scale-0'} ${parallax[8] ? 'after:scale-100' : 'after:scale-0'}`}>
             {/* category */}
-            <div className="w-full flex flex-row justify-between items-center px-26 gap-12 ">
-                <div className="flex-1 flex-row-start-center">
+            <div className="w-full flex flex-row justify-between items-center px-26 gap-12">
+                <div className={`flex-1 flex-row-start-center transisi-700 ${parallax[4] ? 'parallax-0' : 'parallax-x-right-20'}`}>
                     <img src={logo} alt="logo" className="w-[70%]" />
                 </div>
                 {category.map((item, index) => (
-                    <div key={index} className="flex-1 flex-row-start-start">
+                    <div key={index} className={`flex-1 flex-row-start-start transisi-700 ${parallax[index + 5] ? 'parallax-0' : 'parallax-x-right-20'}`}>
                         <p className="text-xs font-bold text-black capitalize">{item}</p>
                     </div>
                 ))}
@@ -95,18 +104,18 @@ const ContentTwo: FC = () => {
 
             {/* list category */}
             <div className="w-full flex flex-row justify-between items-start px-26 gap-12">
-                <div className="flex-1 flex-col-start-start">
+                <div className={`flex-1 flex-col-start-start transisi-700 ${parallax[4] ? 'parallax-0' : 'parallax-x-right-20'}`}>
                     <p className="text-to-small text-slate-600">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam animi, sapiente earum aspernatur alias assumenda laudantium</p>
 
                     {/* social media */}
                     <SocialMedia />
                 </div>
-                <ListCategory category={companyInfo} />
-                <ListCategory category={quickLinks} />
-                <ListCategory category={hotCategories} />
-                <div className="flex-1 flex-col-start-start">
+                <ListCategory category={companyInfo} parallax={parallax[5]} />
+                <ListCategory category={quickLinks} parallax={parallax[6]} />
+                <ListCategory category={hotCategories} parallax={parallax[7]} />
+                <div className={`flex-1 flex-col-start-start  transisi-700 ${parallax[8] ? 'parallax-0' : 'parallax-x-right-20'}`}>
                     {/* whatsapp */}
-                    <div className="flex-row-start-start gap-2">
+                    <div className={`flex-row-start-start gap-2`}>
                         <PiHeadsetBold className="text-3xl text-matcha" />
                         <div className="flex flex-col justify-between items-start h-full">
                             <p className="text-to-small text-matcha capitalize font-medium">through whatsapp</p>
@@ -162,11 +171,12 @@ const SocialMedia: FC = () => {
 
 type ListCategoryProps = {
     category: string[]
+    parallax: boolean
 }
 // list category
-const ListCategory: FC<ListCategoryProps> = ({ category }) => {
+const ListCategory: FC<ListCategoryProps> = ({ category, parallax }) => {
     return (
-        <div className="flex-1 flex-col-start-start gap-1.5">
+        <div className={`flex-1 flex-col-start-start gap-1.5 transisi-700 ${parallax ? 'parallax-0' : 'parallax-x-right-20'}`}>
             {
                 category.map((item, index) => (
                     <div key={index} className="flex-1 flex-col-start-start">

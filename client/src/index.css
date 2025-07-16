@@ -110,6 +110,17 @@
         @apply translate-y-30 opacity-0
     }
 
+    /* translate Y */
+    .parallax-y-top-10 {
+        @apply -translate-y-10 opacity-0
+    }
+    .parallax-y-top-20 {
+        @apply -translate-y-20 opacity-0
+    }
+    .parallax-y-top-30 {
+        @apply -translate-y-30 opacity-0
+    }
+
 
 }
 

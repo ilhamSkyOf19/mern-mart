@@ -64,7 +64,7 @@ const SectionTwo: FC = () => {
             </div>
             {/* category */}
             <div className='w-full h-[90vh] grid grid-cols-3 grid-rows-1 px-12 gap-4'>
-                <div className={`col-span-1 row-span-1 bg-matcha overflow-hidden rounded-md relative cursor-pointer group transisi-700 ${parallax4 ? 'parallax-0' : 'opacity-0'}`}>
+                <div className={`col-span-1 row-span-1 bg-matcha overflow-hidden rounded-md relative cursor-pointer group transisi-700 ${parallax4 ? 'parallax-0' : 'parallax-x-left-10'}`}>
                     <img src={veges} alt="vegetable" className='img-cover group-hover:scale-105 duration-500 ease-in-out' />
                     <CardInCategory text1='Fresh' text2='& Veges' >
                         <LuCarrot className='text-2xl text-matcha' />
