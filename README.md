@@ -1,41 +1,35 @@
-# 🥬 FRESH MART — Modern Organic Company Profile & E-Commerce Website
+# 🥬 FRESH MART — Modern Organic Company Profile Website
 
-Fresh Mart adalah platform digital modern yang menghadirkan pengalaman belanja produk segar, organik, dan berkualitas tinggi langsung ke layar Anda. Mulai dari buah-buahan, sayuran segar, wine artisan, hingga roti sourdough—Fresh Mart dirancang untuk mereka yang mencintai hidup sehat dan alami 🍷🍞🍇
+Fresh Mart adalah website company profile modern yang dirancang untuk menampilkan identitas bisnis yang bergerak di bidang produk segar dan organik. Dengan desain estetika dan efek parallax interaktif, Fresh Mart memberikan kesan profesional, alami, dan terpercaya — cocok untuk audiens yang peduli pada gaya hidup sehat dan berkelanjutan 🍇🍞🍷
 
 ---
 
 ## 🚀 Tech Stack
 
-Fresh Mart dibangun menggunakan kombinasi teknologi modern dan solid yang menjamin performa optimal dan skalabilitas jangka panjang:
+Website ini dibangun menggunakan teknologi modern yang solid dan efisien:
 
-- **Frontend**: React.js dengan efek **Parallax** interaktif untuk tampilan dinamis dan user-friendly.
-- **Backend API**: Dibangun menggunakan **Next.js** (API Routes) sebagai jembatan modern untuk REST API.
-- **Routing & Services**: Diperkuat oleh **Express.js**, memberikan struktur modular dan clean untuk manajemen route & service.
-- **Database**: **MongoDB Atlas** dengan ORM modern **Prisma**, menjadikan manajemen data lebih efisien dan scalable.
+1. **Frontend**: React.js dengan efek Parallax untuk tampilan dinamis dan user-friendly.
+---
+
+## 🏢 Tentang Fresh Mart
+
+Fresh Mart adalah bisnis yang berfokus pada:
+
+1. Sayur & buah segar dari petani lokal.
+2. Produk organik berkualitas tinggi.
+3. Wine & roti artisan.
+4. Gaya hidup sehat & alami.
 
 ---
 
-## 🛍️ Tentang Proyek
+## 🎯 Tujuan Website
 
-Fresh Mart adalah proyek **company profile sekaligus e-commerce** untuk bisnis yang bergerak di bidang:
-
-- Sayur & buah segar
-- Produk organik lokal
-- Wine & roti artisan
-- Serta kebutuhan harian lainnya
-
-Website ini menyuguhkan desain estetika dengan **efek parallax**, memperkuat citra merek yang segar, alami, dan modern.
+1. Menampilkan informasi lengkap tentang Fresh Mart secara profesional.
+2. Membangun kepercayaan dan kredibilitas melalui tampilan visual yang menarik.
+3. Menyediakan informasi kontak, lokasi, dan keunggulan bisnis secara mudah diakses.
+4. Memperkuat branding sebagai penyedia produk organik terpercaya.
 
 ---
-
-## 🧩 Fitur Utama
-
-- ✅ Halaman utama dengan efek **Parallax Scrolling**  
-- ✅ Modular API Backend via Next.js + Express  
-- ✅ Pengelolaan data terstruktur dengan Prisma ORM  
-- ✅ Integrasi database MongoDB Atlas  
-- ✅ Sistem login & register (dalam pengembangan)  
-- ✅ Responsif dan mendukung semua perangkat (dalam pengembangan)
 
 ---
 
