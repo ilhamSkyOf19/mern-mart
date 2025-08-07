@@ -1,4 +1,4 @@
-# 🥬 FRESH MART — Modern Organic E-Commerce & Profile Website
+# 🥬 FRESH MART — Modern Organic Company Profile & E-Commerce Website
 
 Fresh Mart adalah platform digital modern yang menghadirkan pengalaman belanja produk segar, organik, dan berkualitas tinggi langsung ke layar Anda. Mulai dari buah-buahan, sayuran segar, wine artisan, hingga roti sourdough—Fresh Mart dirancang untuk mereka yang mencintai hidup sehat dan alami 🍷🍞🍇
 
@@ -17,7 +17,7 @@ Fresh Mart dibangun menggunakan kombinasi teknologi modern dan solid yang menjam
 
 ## 🛍️ Tentang Proyek
 
-Fresh Mart adalah proyek **website profile sekaligus e-commerce** untuk bisnis yang bergerak di bidang:
+Fresh Mart adalah proyek **company profile sekaligus e-commerce** untuk bisnis yang bergerak di bidang:
 
 - Sayur & buah segar
 - Produk organik lokal
@@ -39,6 +39,14 @@ Website ini menyuguhkan desain estetika dengan **efek parallax**, memperkuat cit
 
 ---
 
+## 📽️ Demo Video
+
+Lihat tampilan dan fitur Fresh Mart dalam video berikut:
+
+📽️ [Klik di sini untuk menonton langsung di Google Drive (Masih dalam pengembangan)](https://drive.google.com/file/d/1ySfUtk5lP6gM-wQB7W3JWBMQqRjsege6/view)
+
+---
+
 ## 🔧 Status Proyek
 
 🛠️ **Masih dalam tahap aktif pengembangan.**  
@@ -49,7 +57,7 @@ Perkembangan dilakukan secara bertahap dengan fokus pada performa, desain UX, da
 
 ## 📩 Kontak
 
-Untuk pertanyaan, kolaborasi, atau masukan:
+Untuk pertanyaan, kolaborasi, atau masukan:  
 📧 ilhamrohmatulloh2019bm@gmail.com
 
 ---
